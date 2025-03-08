@@ -1,5 +1,5 @@
 # Project build files
-/build/
+/build/*
 
 # Roblox Studio lock files
 /*.rbxlx.lock
