@@ -44,6 +44,9 @@
             512
           ]
         }
+      },
+      "Tile Set": {
+        "$path": "assets/small_tile_set.rbxm"
       }
     },
     "Lighting": {
