@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Build place and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Aftman
+        uses: ok-nick/setup-aftman@v0.4.2
+        with:
+          version: 'v0.3.0'
+      
+      - name: Publish
+        env:
+          RBX_API_KEY: ${{ secrets.RBX_API_KEY }}
+        run: make publish
