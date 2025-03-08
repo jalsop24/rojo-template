@@ -1,9 +1,10 @@
 #! /bin/bash
+set -eou pipefail
 
 BUILD_DIR="$(pwd)/build"
 PLACE_FILE="${BUILD_DIR}/placefile.rbxl"
 
-if if [ ! -d "${BUILD_DIR}" ]; then
+if [ ! -d "${BUILD_DIR}" ]; then
   mkdir -p "${BUILD_DIR}";
 fi
 
