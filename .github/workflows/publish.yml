@@ -1,3 +1,5 @@
+name: Deployment
+
 on:
   push:
     branches:
@@ -9,7 +11,9 @@ on:
 
 jobs:
   publish:
-    environment: testing
+    environment: 
+      name: testing
+      url: "https://www.roblox.com/games/${{vars.PLACE_ID}}"
     name: Build place and publish
     runs-on: ubuntu-latest
     steps:
