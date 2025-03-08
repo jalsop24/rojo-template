@@ -25,5 +25,7 @@ jobs:
       
       - name: Publish
         env:
+          UNIVERSE_ID: ${{ env.UNIVERSE_ID }}
+          PLACE_ID: ${{ env.PLACE_ID }}
           RBX_API_KEY: ${{ secrets.RBX_API_KEY }}
         run: make publish
