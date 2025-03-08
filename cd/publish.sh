@@ -1,6 +1,12 @@
 #! /bin/bash
 
-PLACE_FILE=$(pwd)/build/placefile.rbxl
+BUILD_DIR="$(pwd)/build"
+PLACE_FILE="${BUILD_DIR}/placefile.rbxl"
+
+if if [ ! -d "${BUILD_DIR}" ]; then
+  mkdir -p "${BUILD_DIR}";
+fi
+
 
 echo "Building place..."
 rojo build -o $PLACE_FILE
