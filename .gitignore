@@ -1,6 +1,8 @@
-# Project place file
-/rojo-testing.rbxlx
+# Project build files
+/build/
 
 # Roblox Studio lock files
 /*.rbxlx.lock
 /*.rbxl.lock
+
+.env
