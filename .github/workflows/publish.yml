@@ -28,9 +28,13 @@ jobs:
         with:
           version: 'v0.3.0'
       
+      - name: Build
+        run: rojo build -o build/placefile.rbxl
+
       - name: Publish
-        env:
-          UNIVERSE_ID: ${{ vars.UNIVERSE_ID }}
-          PLACE_ID: ${{ vars.PLACE_ID }}
-          RBX_API_KEY: ${{ secrets.RBX_API_KEY }}
-        run: make publish
+        uses: ./.github/actions/rbx-publish
+        with:
+          universe-id: ${{ vars.UNIVERSE_ID }}
+          place-id: ${{ vars.PLACE_ID }}
+          rbx-api-key: ${{ secrets.RBX_API_KEY }}
+          placefile: build/placefile.rbxl
