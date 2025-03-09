@@ -7,6 +7,8 @@ response="$(curl -s --location POST https://apis.roblox.com/universes/v1/$UNIVER
     --header 'Content-Type: application/octet-stream' \
     --data-binary @${PLACE_FILE})"
 
+echo "${response}"
+
 version_number="$(echo $response | jq .versionNumber)"
 
 if [ "${version_number}" = "null" ]; then
