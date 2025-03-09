@@ -16,8 +16,7 @@ jobs:
       url: "https://www.roblox.com/games/${{vars.PLACE_ID}}"
     name: Build place and publish
     runs-on: ubuntu-latest
-    outputs:
-      place-version: ${{ steps.publish.outputs.place-version }}
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,10 +33,9 @@ jobs:
         run: rojo build -o build/placefile.rbxl
 
       - name: Publish
-        id: publish
-        uses: ./.github/actions/rbx-publish
+        uses: Ulferno/upload-to-roblox@latest
         with:
-          universe-id: ${{ vars.UNIVERSE_ID }}
-          place-id: ${{ vars.PLACE_ID }}
-          rbx-api-key: ${{ secrets.RBX_API_KEY }}
-          placefile: build/placefile.rbxl
+          universeId: ${{ vars.UNIVERSE_ID }}
+          placeId: ${{ vars.PLACE_ID }}
+          api-key: ${{ secrets.RBX_API_KEY }}
+          file: build/placefile.rbxl
