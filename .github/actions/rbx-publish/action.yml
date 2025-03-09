@@ -21,6 +21,8 @@ inputs:
 outputs:
   place-version:
     description: 'The version of the place according to Roblox'
+    value: ${{ steps.publish.outputs.place-version }}
+
 
 runs:
   using: 'composite'
@@ -33,6 +35,7 @@ runs:
       GITHUB_ACTION_PATH: ${{ github.action_path }}
 
   - name: Publish
+    id: publish
     run: publish.sh
     shell: bash
     env:

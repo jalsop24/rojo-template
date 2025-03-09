@@ -16,5 +16,4 @@ if [ "${version_number}" = "null" ]; then
     exit 1
 fi
 
-echo "Place version: ${version_number}"
-
+echo "place-version=${version_number}" >> $GITHUB_OUTPUT
