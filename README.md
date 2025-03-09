@@ -37,3 +37,5 @@ This is done from the main repo page:
 4. Scroll down and click 'Add environment secret'
 5. Name `RBX_API_KEY`, value is whatever you created in the [Creator Hub](https://create.roblox.com/dashboard/credentials?activeTab=ApiKeysTab) (Note that your api key must have the`universe-places:write` permissions to publish places)
 6. 'Add environment variable' for both `UNIVERSE_ID` and `PLACE_ID`
+
+Once this is set up, the deployment action will publish your place automatically when you push to the `main` branch.
