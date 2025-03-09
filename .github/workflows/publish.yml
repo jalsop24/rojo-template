@@ -16,6 +16,8 @@ jobs:
       url: "https://www.roblox.com/games/${{vars.PLACE_ID}}"
     name: Build place and publish
     runs-on: ubuntu-latest
+    outputs:
+      place-version: ${{ steps.publish.outputs.place-version }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,6 +34,7 @@ jobs:
         run: rojo build -o build/placefile.rbxl
 
       - name: Publish
+        id: publish
         uses: ./.github/actions/rbx-publish
         with:
           universe-id: ${{ vars.UNIVERSE_ID }}
