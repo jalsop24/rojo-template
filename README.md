@@ -1,4 +1,4 @@
-# rojo-testing
+# rojo-template
 
 A template repo that contains an automatic build and deployment workflow using rojo
 
