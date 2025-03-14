@@ -24,6 +24,9 @@ jobs:
     - name: Lint setup
       run: make lint-setup
 
+    - name: Build
+      run: make build-place
+
     - name: Lint
       run: make lint
 
