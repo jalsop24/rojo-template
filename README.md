@@ -17,12 +17,6 @@ To build locally run the following command (outputs to `build/placefile.rbxl` by
 make build-place
 ```
 
-and to publish locally run
-
-```bash
-make publish
-```
-
 ## Setting up your own copy of this repo
 
 You can clone the repo as normal and make sure you have git lfs set up too as that is used for `.rbxm` files.
