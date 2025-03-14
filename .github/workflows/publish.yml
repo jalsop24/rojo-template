@@ -11,6 +11,7 @@ on:
 
 jobs:
   publish:
+    if: ${{github.ref == 'refs/heads/main'}}
     environment: 
       name: testing
       url: "https://www.roblox.com/games/${{vars.PLACE_ID}}"
@@ -33,7 +34,6 @@ jobs:
         run: make build-place
 
       - name: Publish
-        if: ${{github.ref == 'refs/heads/main'}}
         uses: Ulferno/upload-to-roblox@latest
         with:
           universeId: ${{ vars.UNIVERSE_ID }}
