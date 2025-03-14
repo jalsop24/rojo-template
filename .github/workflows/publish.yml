@@ -30,7 +30,7 @@ jobs:
           version: 'v0.3.0'
       
       - name: Build
-        run: rojo build -o build/placefile.rbxl
+        run: make build-place
 
       - name: Publish
         uses: Ulferno/upload-to-roblox@latest
