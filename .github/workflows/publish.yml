@@ -21,11 +21,11 @@ jobs:
       with:
         version: 'v0.3.0'
     
-    - name: Lint setup
-      run: make lint-setup
-
     - name: Build
       run: make build-place
+
+    - name: Lint setup
+      run: make lint-setup
 
     - name: Lint
       run: make lint
