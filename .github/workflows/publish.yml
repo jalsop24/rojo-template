@@ -1,16 +1,39 @@
-name: Deployment
+name: CI/CD
 
 on:
   push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
-  workflow_dispatch:
 
 jobs:
+
+  lint:
+    name: Run linting checks
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        lfs: true
+    - name: Checkout LFS objects
+      run: git lfs checkout
+
+    - name: Setup Aftman
+      uses: ok-nick/setup-aftman@v0.4.2
+      with:
+        version: 'v0.3.0'
+    
+    - name: Build
+      run: make build-place
+
+    - name: Lint setup
+      run: make lint-setup
+
+    - name: Lint
+      run: make lint
+
   publish:
+    if: ${{github.ref == 'refs/heads/main'}}
+    needs: lint
+
     environment: 
       name: testing
       url: "https://www.roblox.com/games/${{vars.PLACE_ID}}"
@@ -30,7 +53,7 @@ jobs:
           version: 'v0.3.0'
       
       - name: Build
-        run: rojo build -o build/placefile.rbxl
+        run: make build-place
 
       - name: Publish
         uses: Ulferno/upload-to-roblox@latest

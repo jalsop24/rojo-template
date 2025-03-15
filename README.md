@@ -1,4 +1,4 @@
-# rojo-testing
+# rojo-template
 
 A template repo that contains an automatic build and deployment workflow using rojo
 
@@ -15,12 +15,6 @@ To build locally run the following command (outputs to `build/placefile.rbxl` by
 
 ```bash
 make build-place
-```
-
-and to publish locally run
-
-```bash
-make publish
 ```
 
 ## Setting up your own copy of this repo

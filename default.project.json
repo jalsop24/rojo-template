@@ -1,15 +1,30 @@
 {
-  "name": "rojo-testing",
+  "name": "rojo-template",
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
       "Shared": {
         "$path": "src/shared"
+      },
+      "Version": {
+        "$path": "build/version.txt"
+      },
+      "Assets": {
+        "$path": "assets/"
+      },
+      "Network": {
+        "$path": "build/client_net.luau"
       }
     },
     "ServerScriptService": {
       "Server": {
         "$path": "src/server"
+      }
+    },
+    "ServerStorage": {
+      "$path": "src/server_storage",
+      "Network": {
+        "$path": "build/server_net.luau"
       }
     },
     "StarterPlayer": {
@@ -44,9 +59,6 @@
             512
           ]
         }
-      },
-      "Tile Set": {
-        "$path": "assets/small_tile_set.rbxm"
       }
     },
     "Lighting": {
